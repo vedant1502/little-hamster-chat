@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Hamsters</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Comic Neue', cursive;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to top, #8fd19e 0%, #8fd19e 25%, #a2dbfa 25%, #c2e9fb 100%);
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .title {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-box {
+      background-color: white;
+      width: 260px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .login-box input {
+      padding: 10px;
+      border: 2px solid #cce7d0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .login-box input:focus {
+      border-color: #8fd19e;
+    }
+
+    .login-box button {
+      background-color: #8fd19e;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .login-box button:hover {
+      background-color: #79c48b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Little Hamsters</h1>
+    <div class="login-box">
+      <input type="text" id="user" placeholder="Username">
+      <input type="password" id="pass" placeholder="Password">
+      <button id="loginBtn">Login</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginBtn").addEventListener("click", function() {
+      const username = document.getElementById("user").value.trim();
+      const password = document.getElementById("pass").value.trim();
+
+      if (username && password) {
+        // Redirect to chat page
+        window.location.href = "chat.html";
+      } else {
+        alert("Please enter both username and password 🐹");
+      }
+    });
+  </script>
+</body>
+</html>
